@@ -402,6 +402,12 @@ button[type="roll"].sheet-plain-major-wound::before {
 	-moz-appearance:textfield;
 }
 
+.sheet-brp .sheet-skill-item input[type="number"]::-webkit-outer-spin-button,
+.sheet-brp .sheet-skill-item input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin:0;
+}
+
 .sheet-category-heading {
     font-size:16px;
     font-weight:bold;
@@ -443,7 +449,6 @@ button[type="roll"].sheet-plain-major-wound::before {
     width:100%;
 }
 
-/* Skills layout */
 .sheet-skill-item {
     margin:0 0 0.2rem 0;
     width:100%;
