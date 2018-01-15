@@ -680,6 +680,7 @@
 <div class="sheet-skills-layout">
 	<div class="sheet-skills-col1">
 		<div class="sheet-sub-col">
+			<!-- Communication -->
 			<div class="sheet-skill-item">
 				<h3 class="sheet-category-heading sheet-ovf-category">Communication</h3>
 				<div class="sheet-category-bonus">
@@ -733,6 +734,17 @@
 			</div>
 			<div class="sheet-skill-item">
 				<label class="sheet-ovf-label">
+					<input type="checkbox" />Fast Talk
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_FastTalk" value="5" />
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{FastTalk}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{FastTalk}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{FastTalk}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{FastTalk}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{FastTalk}}} {{roll=[[1d100]]}} {{skillname=Fast Talk}}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
 					<input type="checkbox" />Language, Own
 					<span class="sheet-base-chance">(INT/EDU x5%)</span>
 				</label>
@@ -743,7 +755,7 @@
 				</div>
 			</div>
 			<div class="sheet-skill-item">
-				<label class="sheet-ovf-label">
+				<label class="sheet-ovf-label sheet-ovf-label-indent">
 					Language, Other
 					<span class="sheet-base-chance">(0%)</span>
 				</label>
@@ -761,530 +773,683 @@
 					</div>
 				</fieldset>
 			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_Success-Perform"/>Perform
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_Perform"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Perform}}} {{roll=[[1d100]]}} {{skillname=Perform}}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_Success-Persuade"/>Persuade
+					<span class="sheet-base-chance">(15%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_Persuade"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Persuade}}} {{roll=[[1d100]]}} {{skillname=Persuade}}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_Success-Status"/>Status
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_Status"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Status}}} {{roll=[[1d100]]}} {{skillname=Status}}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_Success-Teach"/>Teach
+					<span class="sheet-base-chance">(10%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_Teach"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Teach}}} {{roll=[[1d100]]}} {{skillname=Teach}}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<fieldset class="repeating_commskills">
+					<span class="sheet-repeat-label">
+						<input type="checkbox" name="attr_ComSuccess" />
+						<input type="text" name="attr_ComSkillname"/>
+					</span>
+					<div class="sheet-rating-roll">
+						<input type="number" name="attr_ComScore" />
+						<span>%</span>
+						<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ComScore}}} {{roll=[[1d100]]}} {{skillname=@{ComSkillname}}}"/>
+					</div>
+				</fieldset>
+			</div>
+			<!-- Manipulation -->
+			<div class="sheet-skill-item sheet-margin-top ">
+				<h3 class="sheet-category-heading sheet-ovf-category">Manipulation</h3>
+				<div class="sheet-category-bonus">
+					<span class="sheet-bonus-label">bonus</span>
+					(<input type="number" name="attr_manipulation" value="0" />)
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label sheet-ovf-label-indent">
+					Art
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+			</div>
+			<div class="sheet-skill-item">
+				<fieldset class="repeating_Langskills">
+					<span class="sheet-repeat-label">
+						<input type="checkbox" name="attr_artSuccess" />
+						<input type="text" name="attr_artSkillname"/>
+					</span>
+					<div class="sheet-rating-roll">
+						<input type="number" name="attr_artScore" />
+						<span>%</span>
+						<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{artScore}}} {{roll=[[1d100]]}} {{skillname=@{artSkillname}}}"/>
+					</div>
+				</fieldset>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label sheet-ovf-label-indent">
+					Craft
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+			</div>
+			<div class="sheet-skill-item">
+				<fieldset class="repeating_craftskills">
+					<span class="sheet-repeat-label">
+						<input type="checkbox" name="attr_craftSuccess" />
+						<input type="text" name="attr_craftSkillname"/>
+					</span>
+					<div class="sheet-rating-roll">
+						<input type="number" name="attr_craftScore" />
+						<span>%</span>
+						<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{craftScore}}} {{roll=[[1d100]]}} {{skillname=@{craftSkillname}}}"/>
+					</div>
+				</fieldset>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_Success-Demolition"/>Demolition
+					<span class="sheet-base-chance">(1%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_Demolition"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Demolition}}} {{roll=[[1d100]]}} {{skillname=Demolition}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_Success-FineManipulation"/>Fine Manipulation
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_FineManipulation"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{FineManipulation}}} {{roll=[[1d100]]}} {{skillname=Fine Manipulation}"/>
+				</div>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label sheet-ovf-label-indent">
+					Heavy Machine
+					<span class="sheet-base-chance">(1%)</span>
+				</label>
+			</div>
+			<div class="sheet-skill-item">
+				<fieldset class="repeating_hMachineSkills">
+					<span class="sheet-repeat-label">
+						<input type="checkbox" name="attr_hMachineSuccess" />
+						<input type="text" name="attr_hMachineSkills"/>
+					</span>
+					<div class="sheet-rating-roll">
+						<input type="number" name="attr_hMachineScore" />
+						<span>%</span>
+						<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{hMachineScore}}} {{roll=[[1d100]]}} {{skillname=@{hMachineSkills}}}"/>
+					</div>
+				</fieldset>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label sheet-ovf-label-indent">
+					Repair
+					<span class="sheet-base-chance">(15%)</span>
+				</label>
+			</div>
+			<div class="sheet-skill-item">
+				<fieldset class="repeating_repairSkills">
+					<span class="sheet-repeat-label">
+						<input type="checkbox" name="attr_repairSuccess" />
+						<input type="text" name="attr_repairSkills"/>
+					</span>
+					<div class="sheet-rating-roll">
+						<input type="number" name="attr_repairScore" />
+						<span>%</span>
+						<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{repairScore}}} {{roll=[[1d100]]}} {{skillname=@{repairSkills}}}"/>
+					</div>
+				</fieldset>
+			</div>
+			<div class="sheet-skill-item">
+				<label class="sheet-ovf-label">
+					<input type="checkbox" name="attr_SleightofHandSuccess"/>Sleight of Hand
+					<span class="sheet-base-chance">(5%)</span>
+				</label>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_SleightofHandScore" value="15"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{SleightofHandScore}}} {{roll=[[1d100]]}} {{skillname=Sleight of Hand}}"/>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="sheet-skills-col2">
 		<div class="sheet-skill-item">
+			<h3 class="sheet-category-heading sheet-ovf-category">Mental</h3>
+			<div class="sheet-category-bonus">
+				<span class="sheet-bonus-label">bonus</span>
+				(<input type="number" name="attr_Mental" value="0" />)
+			</div>
+		</div>
+		<div class="sheet-skill-item">
 			<label class="sheet-ovf-label">
-				<input id="skill1" type="checkbox" />Technical Skill (varies)
+				<input type="checkbox" name="attr_Success-Appraise"/>Appraise
+				<span class="sheet-base-chance">(15%)</span>
 			</label>
 			<div class="sheet-rating-roll">
-				<input type="number" value="188" />
+				<input type="number" name="attr_Appraise" value="15"/>
 				<span>%</span>
-				<button type="roll"></button>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Appraise}}} {{roll=[[1d100]]}} {{skillname=Appraise}}"/>
 			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-FirstAid"/>First Aid
+				<span class="sheet-base-chance">(30%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_FirstAid" value="30"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{FirstAid}}} {{roll=[[1d100]]}} {{skillname=First Aid}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Gaming"/>Gaming
+				<span class="sheet-base-chance">(INT+POW)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Gaming"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Gaming}}} {{roll=[[1d100]]}} {{skillname=Gaming}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Knowledge
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_KnowSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_KnowSucess" />
+					<input type="text" name="attr_KnowSkills"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_KnowScore" />
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{KnowScore}}} {{roll=[[1d100]]}} {{skillname=@{KnowSkills}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Literacy
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_KnowSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_LitSucess" />
+					<input type="text" name="attr_LitSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_LitScore" />
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{LitScore}}} {{roll=[[1d100]]}} {{skillname=@{LitSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Medicine"/>Medicine
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Medicine"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Medicine}}} {{roll=[[1d100]]}} {{skillname=Medicine}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Psychotherapy"/>Psychotherapy
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Psychotherapy"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Psychotherapy}}} {{roll=[[1d100]]}} {{skillname=Psychotherapy}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Science
+				<span class="sheet-base-chance">(1%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_ScienceSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_ScienceSucess"  />
+					<input type="text" name="attr_ScienceSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_ScienceScore" value="1"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ScienceScore}}} {{roll=[[1d100]]}} {{skillname=@{ScienceSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Strategy"/>Strategy
+				<span class="sheet-base-chance">(1%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Strategy" value="1"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Strategy}}} {{roll=[[1d100]]}} {{skillname=Strategy}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Technical Skill
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_TechSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_TechSucess"   />
+					<input type="text" name="attr_TechSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_TechScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{TechScore}}} {{roll=[[1d100]]}} {{skillname=@{TechSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<!-- Perception -->
+		<div class="sheet-skill-item sheet-margin-top ">
+			<h3 class="sheet-category-heading sheet-ovf-category">Perception</h3>
+			<div class="sheet-category-bonus">
+				<span class="sheet-bonus-label">bonus</span>
+				(<input type="number" name="attr_Perception" value="0" />)
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Insight"/>Insight
+				<span class="sheet-base-chance">(5%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Insight" value="5"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Insight}}} {{roll=[[1d100]]}} {{skillname=Insight}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Listen"/>Listen
+				<span class="sheet-base-chance">(25%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Listen" value="25"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Listen}}} {{roll=[[1d100]]}} {{skillname=Listen}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Navigate"/>Navigate
+				<span class="sheet-base-chance">(10%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Navigate" value="10"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Navigate}}} {{roll=[[1d100]]}} {{skillname=Navigate}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Research"/>Research
+				<span class="sheet-base-chance">(25%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Research" value="25"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Research}}} {{roll=[[1d100]]}} {{skillname=Research}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Sense"/>Sense
+				<span class="sheet-base-chance">(10%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Sense" value="10"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Sense}}} {{roll=[[1d100]]}} {{skillname=Sense}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Spot"/>Spot
+				<span class="sheet-base-chance">(25%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Spot" value="25"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Spot}}} {{roll=[[1d100]]}} {{skillname=Spot}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Track"/>Track
+				<span class="sheet-base-chance">(10%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Track" value="10"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Track}}} {{roll=[[1d100]]}} {{skillname=Track}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_PercepSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_PercepSucess" />
+					<input type="text" name="attr_PercepSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_PercepScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll}  {{name=@{Name}}} {{skillvalue=@{PercepScore}}} {{fumble=[[ceil(95+(@{PercepScore}+@{Perception}+?{Mods|0})/20))]]}} {{crit=[[ceil((@{PercepScore}+@{Perception}+?{Mods|0})/20)+1]]}} {{special=[[ceil((@{PercepScore}+@{Perception}+?{Mods|0})/5)+1]]}}        {{success=[[@{PercepScore}+@{Perception}+?{Mods|0}]]}} {{roll=[[1d100]]}} {{skillname=@{PercepSkill}}}"/>
+				</div>
+			</fieldset>
 		</div>
 	</div>
 	<div class="sheet-skills-col3">
+		<!-- Physical -->
 		<div class="sheet-skill-item">
-			<label class="sheet-ovf-label">
-				<input id="skill2" type="checkbox" />Fine Manipulation (5%)
-			</label>
-			<div class="sheet-rating-roll">
-				<input type="number" value="188" />
-				<span>%</span>
-				<button type="roll"></button>
+			<h3 class="sheet-category-heading sheet-ovf-category">Physical</h3>
+			<div class="sheet-category-bonus">
+				<span class="sheet-bonus-label">bonus</span>
+				(<input type="number" name="attr_Physical" value="0" />)
 			</div>
 		</div>
-	</div>
-</div>
-<div class='sheet-3colrow'>
-	<div class='sheet-col'>
-		<!-- Communication -->
-		<table style="width: 100%;">
-			<tr>
-				<td style="width:20px"></td>
-				<td><b class="sheet-cat_header">Communication</b></td>
-				<td><input type="number" name="attr_Communication" value="0"/></td>
-			</tr>	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Bargain"/></td>
-				<td class="sheet-skillname">Bargain (5%)</td>
-				<td><input type="number" name="attr_Bargain"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Bargain}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Bargain}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Bargain}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Bargain}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Bargain}}} {{roll=[[1d100]]}} {{skillname=Bargain}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Command"  /></td>
-				<td class="sheet-skillname">Command (5%)</td>
-				<td><input type="number" name="attr_Command"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Command}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Command}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Command}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Command}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Command}}} {{roll=[[1d100]]}} {{skillname=Command}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Disguise"  /></td>
-				<td class="sheet-skillname">Disguise (1%)</td>
-				<td><input type="number" name="attr_Disguise"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Disguise}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Disguise}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Disguise}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Disguise}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Disguise}}} {{roll=[[1d100]]}} {{skillname=Disguise}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Etiquette"  /></td>
-				<td class="sheet-skillname">Etiquette (5%)</td>
-				<td><input type="number" name="attr_Etiquette"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Etiquette}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Etiquette}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Etiquette}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Etiquette}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Etiquette}}} {{roll=[[1d100]]}} {{skillname=Etiquette}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-ownLang"  /></td>
-				<td class="sheet-skillname">Language, Own (INT/EDUx5%)</td>
-				<td><input type="number" name="attr_ownLang"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ownLang}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ownLang}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ownLang}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ownLang}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ownLang}}} {{roll=[[1d100]]}} {{skillname=ownLang}}"/></td>
-			</tr>
-		</table>
-		<fieldset class='repeating_Langskills'>
-			<input type="checkbox" name="attr_LangSuccess"  />
-			<input type="text" name="attr_LangSkillname" class="sheet-repeat-skillname" />
-			<input type="number" name="attr_LangScore" /></td>
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{LangScore}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{LangScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{LangScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{LangScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{LangScore}}} {{roll=[[1d100]]}} {{skillname=@{LangSkillname}}}"/>
-		</fieldset>		
-		<table style="width:100%;">	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Perform"  /></td>
-				<td class="sheet-skillname">Perform (5%)</td>
-				<td><input type="number" name="attr_Perform"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Perform}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Perform}}} {{roll=[[1d100]]}} {{skillname=Perform}}"/></td>
-			</tr>				
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Persuade"  /></td>
-				<td class="sheet-skillname">Persuade (15%)</td>
-				<td><input type="number" name="attr_Persuade"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Persuade}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Persuade}}} {{roll=[[1d100]]}} {{skillname=Persuade}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Status"  /></td>
-				<td class="sheet-skillname">Status (5%)</td>
-				<td><input type="number" name="attr_Status"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Status}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Status}}} {{roll=[[1d100]]}} {{skillname=Status}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Teach"  /></td>
-				<td class="sheet-skillname">Teach (10%)</td>
-				<td><input type="number" name="attr_Teach"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Teach}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Teach}}} {{roll=[[1d100]]}} {{skillname=Teach}}"/></td>
-			</tr>
-		</table>	
-		<fieldset class='repeating_commskills'>
-			<table style="width: 100%;">	
-				<tr>
-					<td><input type="checkbox" name="attr_ComSuccess"  /></td>
-					<td><input type="text" name="attr_ComSkillname" class="sheet-skillname" /></td>
-					<td><input type="number" name="attr_ComScore" /></td>
-					<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ComScore}+@{Communication})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ComScore}}} {{roll=[[1d100]]}} {{skillname=@{ComSkillname}}}"/></td>
-				</tr>
-			</table>
-		</fieldset>
-		<!-- Manipulation -->
-		<table style="width: 100%;">
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td><b class="sheet-cat_header">Manipulation</b></td>
-				<td><input type="number" name="attr_manipulation" value="0" /></td>
-			</tr>					
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Art(5%):</td>
-			</tr>			
-		</table>
-		<fieldset class='repeating_artskills'>
-			<table style="width: 100%;">	
-				<tr>
-					<td><input type="checkbox" name="attr_artSuccess"  /></td>
-					<td><input  type="text" name="attr_artSkillname" class="sheet-skillname" /></td>
-					<td><input type="number" name="attr_artScore" /></td>
-					<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{artScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{artScore}}} {{roll=[[1d100]]}} {{skillname=@{artSkillname}}}"/></td>
-				</tr>
-			</table>
-		</fieldset>
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Craft(5%):</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_craftskills'>
-			<input type="checkbox" name="attr_craftSuccess"  />
-			<input type="text" name="attr_craftSkillname" class="sheet-skillname"/>
-			<input type="number" name="attr_craftScore" />
-			<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{craftScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{craftScore}}} {{roll=[[1d100]]}} {{skillname=@{craftSkillname}}}"/></td>
-		</fieldset>				
-		<table style="width: 100%;">
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Demolition"  /></td>
-				<td class="sheet-skillname">Demolition (1%)</td>
-				<td><input type="number" name="attr_Demolition"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Demolition}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Demolition}}} {{roll=[[1d100]]}} {{skillname=Demolition}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-FineManipulation" /></td>
-				<td class="sheet-skillname">Fine Manipulation (5%)</td>
-				<td><input type="number" name="attr_FineManipulation" /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{FineManipulation}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{FineManipulation}}} {{roll=[[1d100]]}} {{skillname=Fine Manipulation}"/></td>
-			</tr>
-		</table>
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Heavy Machine (1%):</td>
-			</tr>
-		</table>
-		<fieldset class='repeating_hMachineSkills'>
-			<input type="checkbox" name="attr_hMachineSuccess"  />
-			<input type="text" name="attr_hMachineSkills" class="sheet-skillname"/>
-			<input type="number" name="attr_hMachineScore" />
-			<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{hMachineScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{hMachineScore}}} {{roll=[[1d100]]}} {{skillname=@{hMachineSkills}}}"/></td>
-		</fieldset>				
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td class="sheet-skillname">Repair (15%)</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_repairSkills'>
-			<input type="checkbox" name="attr_repairSuccess"  />
-			<input type="text" name="attr_repairSkills" class="sheet-skillname"/>
-			<input type="number" name="attr_repairScore" />
-			<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{repairScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{repairScore}}} {{roll=[[1d100]]}} {{skillname=@{repairSkills}}}"/></td>
-		</fieldset>				
-		<table style="width: 100%;">
-			<tr>
-				<td><input type="checkbox" name="attr_SleightofHandSuccess"  /></td>
-				<td class="sheet-skillname">Sleight of Hand (5%)</td>
-				<td><input type="number" name="attr_SleightofHandScore"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{SleightofHandScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{SleightofHandScore}}} {{roll=[[1d100]]}} {{skillname=Sleight of Hand}}"/></td>
-			</tr>
-		</table>
-		<fieldset class='repeating_manipkills'>	
-			<table style="width: 100%;">	
-			<tr>
-				<td><input type="checkbox" name="attr_manipSuccess"  /></td>
-				<td><input type="text" name="attr_manipSkillname" class="sheet-skillname" /></td> 
-				<td><input type="number" name="attr_manipScore" /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{manipScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{manipScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{manipScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{manipScore}+@{Manipulation})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{manipScore}}} {{roll=[[1d100]]}} {{skillname=@{{manipSkillname}}}"/></td>
-			</tr>		
-			</table>			
-		</fieldset>
-	</div>
-	
-	<div class='sheet-col'>
-		<!-- Mental -->
-		<table style="width: 100%;">
-			<tr>
-				<td style="width:20px"></td>
-				<td><b class="sheet-cat_header">Mental</b></td>
-				<td><input type="number" name="attr_Mental" value="0"/></td>
-			</tr>	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Appraise"  /></td>
-				<td class="sheet-skillname">Appraise (15%)</td>
-				<td><input type="number" name="attr_Appraise"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Appraise}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Appraise}}} {{roll=[[1d100]]}} {{skillname=Appraise}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-FirstAid"  /></td>
-				<td class="sheet-skillname">First Aid (30%)</td>
-				<td><input type="number" name="attr_FirstAid"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{FirstAid}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{FirstAid}}} {{roll=[[1d100]]}} {{skillname=First Aid}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Gaming"  /></td>
-				<td class="sheet-skillname">Gaming (INT+POW)</td>
-				<td><input type="number" name="attr_Gaming"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Gaming}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Gaming}}} {{roll=[[1d100]]}} {{skillname=Gaming}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Psychotherapy"  /></td>
-				<td class="sheet-skillname">Psychotherapy (varies)</td>
-				<td><input type="number" name="attr_Psychotherapy"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Psychotherapy}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Psychotherapy}}} {{roll=[[1d100]]}} {{skillname=Psychotherapy}}"/></td>
-			</tr>                
-		</table>
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Knowledge (varies):</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_KnowSkills'>
-			<input type="checkbox" name="attr_KnowSucess"  />
-			<input type="text" name="attr_KnowSkills" class="sheet-skillname"/>
-			<input type="number" name="attr_KnowScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{KnowScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{KnowScore}}} {{roll=[[1d100]]}} {{skillname=@{KnowSkills}}}"/></td>
-		</fieldset>				
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Literacy (varies):</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_LitSkills'>
-			<input type="checkbox" name="attr_LitSucess"  />
-			<input type="text" name="attr_LitSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_LitScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{LitScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{LitScore}}} {{roll=[[1d100]]}} {{skillname=@{LitSkill}}}"/>
-		</fieldset>					
-		<table style="width: 100%;">	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Medicine"  /></td>
-				<td class="sheet-skillname">Medicine (5%)</td>
-				<td><input type="number" name="attr_Medicine"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Medicine}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Medicine}}} {{roll=[[1d100]]}} {{skillname=Medicine}"/></td>
-			</tr>
-		</table>
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Science (1%)</td>
-			</tr>
-		</table>
-		<fieldset class='repeating_ScienceSkills'>
-			<input type="checkbox" name="attr_ScienceSucess"  />
-			<input type="text" name="attr_ScienceSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_ScienceScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ScienceScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ScienceScore}}} {{roll=[[1d100]]}} {{skillname=@{ScienceSkill}}}"/>
-		</fieldset>				
-		<table style="width: 100%;">				
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Strategy"  /></td>
-				<td class="sheet-skillname">Strategy (1%)</td>
-				<td><input type="number" name="attr_Strategy"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Strategy}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Strategy}}} {{roll=[[1d100]]}} {{skillname=Strategy}"/></td>
-			</tr>
-		</table>	
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Technical Skill (varies):</td>
-			</tr>
-		</table>
-		<fieldset class='repeating_TechSkills'>
-			<input type="checkbox" name="attr_TechSucess"  />
-			<input type="text" name="attr_TechSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_TechScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{TechScore}+@{Mental})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{TechScore}}} {{roll=[[1d100]]}} {{skillname=@{TechSkill}}}"/>
-		</fieldset>
-		<!-- Perception -->
-		<table style="width: 100%;">								
-			<tr>
-				<td style="width:20px"></td>
-				<td class="sheet-skillname"><b class="sheet-cat_header">Perception</b></td>
-				<td><input type="number" name="attr_Perception" value="0" /></td>
-			</tr>				
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Insight"  /></td>
-				<td class="sheet-skillname">Insight (5%)</td>
-				<td><input type="number" name="attr_Insight"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Insight}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Insight}}} {{roll=[[1d100]]}} {{skillname=Insight}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Listen"  /></td>
-				<td class="sheet-skillname">Listen (25%)</td>
-				<td><input type="number" name="attr_Listen"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Listen}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Listen}}} {{roll=[[1d100]]}} {{skillname=Listen}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Navigate"  /></td>
-				<td class="sheet-skillname">Navigate (10%)</td>
-				<td><input type="number" name="attr_Navigate"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Navigate}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Navigate}}} {{roll=[[1d100]]}} {{skillname=Navigate}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Research"  /></td>
-				<td class="sheet-skillname">Research (25%)</td>
-				<td><input type="number" name="attr_Research"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Research}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Research}}} {{roll=[[1d100]]}} {{skillname=Research}}"/></td>
-			</tr>                
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Sense"  /></td>
-				<td class="sheet-skillname">Sense (10%)</td>
-				<td><input type="number" name="attr_Sense"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Sense}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Sense}}} {{roll=[[1d100]]}} {{skillname=Sense}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Spot"  /></td>
-				<td class="sheet-skillname">Spot (25%)</td>
-				<td><input type="number" name="attr_Spot"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Spot}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Spot}}} {{roll=[[1d100]]}} {{skillname=Spot}}"/></td>
-			</tr>				
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Track "  /></td>
-				<td class="sheet-skillname">Track (10%)</td>
-				<td><input type="number" name="attr_Track"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Track}+@{Perception})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Track}}} {{roll=[[1d100]]}} {{skillname=Track}}"/></td>
-			</tr>
-		</table>
-		<fieldset class='repeating_PercepSkills'>
-			<input type="checkbox" name="attr_PercepSucess"  />
-			<input type="text" name="attr_PercepSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_PercepScore" />
-			<button type="roll" value="&{template:skillRoll}  {{name=@{Name}}} {{skillvalue=@{PercepScore}}} {{fumble=[[ceil(95+(@{PercepScore}+@{Perception}+?{Mods|0})/20))]]}} {{crit=[[ceil((@{PercepScore}+@{Perception}+?{Mods|0})/20)+1]]}} {{special=[[ceil((@{PercepScore}+@{Perception}+?{Mods|0})/5)+1]]}}        {{success=[[@{PercepScore}+@{Perception}+?{Mods|0}]]}} {{roll=[[1d100]]}} {{skillname=@{PercepSkill}}}"/></td>
-		</fieldset>	
-	</div>
-	<div class="sheet-col">
-		<!-- Physical -->
-		<table style="width: 100%;">
-			<tr>
-				<td style="width:20px"></td>
-				<td><b class="sheet-cat_header">Physical</b></td>
-				<td><input type="number" name="attr_Physical" value="0" /></td>
-			</tr>	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Climb"  /></td>
-				<td class="sheet-skillname">Climb (40%)</td>
-				<td><input type="number" name="attr_Climb"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Climb}}} {{roll=[[1d100]]}} {{skillname=Climb}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Dodge"  /></td>
-				<td class="sheet-skillname">Dodge (DEX x2%)</td>
-				<td><input type="number" name="attr_Dodge"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Dodge}}} {{roll=[[1d100]]}} {{skillname=Dodge}}"/></td>
-			</tr>
-		</table>		
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Drive (varies)</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_DriveSkills'>
-			<input type="checkbox" name="attr_DriveSucess"  />
-			<input type="text" name="attr_DriveSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_DriveScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{DriveScore}}} {{roll=[[1d100]]}} {{skillname=@{DriveSkill}}}"/>
-		</fieldset>				
-
-		<table style="width: 100%;">
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Hide"  /></td>
-				<td class="sheet-skillname">Hide (10%)</td>
-				<td><input type="number" name="attr_Hide"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Hide}}} {{roll=[[1d100]]}} {{skillname=Hide}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Jump"  /></td>
-				<td class="sheet-skillname">Jump (25%)</td>
-				<td><input type="number" name="attr_Jump"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Jump}}} {{roll=[[1d100]]}} {{skillname=Jump}}"/></td>
-			</tr>
-		</table>		
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Pilot (varies)</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_PilotSkills'>
-			<input type="checkbox" name="attr_PilotSucess"  />
-			<input type="text" name="attr_PilotSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_PilotScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{PilotScore}}} {{roll=[[1d100]]}} {{skillname=@{PilotSkill}}}"/>
-		</fieldset>				
-		<table style="width: 100%;">
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Projection"  /></td>
-				<td class="sheet-skillname">Projection (DEX x2%)</td>
-				<td><input type="number" name="attr_Projection"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Projection}}} {{roll=[[1d100]]}} {{skillname=Projection}}"/>
-			</tr>
-		</table>		
-
-		<table style="width: 100%;">				
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Ride (varies)</td>
-			</tr>	
-		</table>
-		<fieldset class='repeating_RideSkills'>
-			<input type="checkbox" name="attr_RideSucess"  />
-			<input type="text" name="attr_RideSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_RideScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{RideScore}}} {{roll=[[1d100]]}} {{skillname=@{RideSkill}}}"/>
-		</fieldset>				
-
-		<table style="width: 100%;">		
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Stealth"  /></td>
-				<td class="sheet-skillname">Stealth (10%)</td>
-				<td><input type="number" name="attr_Stealth"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Stealth}}} {{roll=[[1d100]]}} {{skillname=Stealth}}"/></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Swim"  /></td>
-				<td class="sheet-skillname">Swim (25%)</td>
-				<td><input type="number" name="attr_Swim"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Swim}}} {{roll=[[1d100]]}} {{skillname=Swim}}"/></td>
-			</tr>	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-Throw"  /></td>
-				<td class="sheet-skillname">Throw (25%)</td>
-				<td><input type="number" name="attr_throw"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{throw}}} {{roll=[[1d100]]}} {{skillname=Throw}}"/></td>
-			</tr>
-		</table>
-		<fieldset class='repeating_PhysicalSkills'>
-			<input type="checkbox" name="attr_PhysicalSucess"  />
-			<input type="text" name="attr_PhysicalSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_PhysicalScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{PhysicalScore}}} {{roll=[[1d100]]}} {{skillname=@{PhysicalSkill}}}"/></td>
-		</fieldset>	
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Climb" />Climb
+				<span class="sheet-base-chance">(40%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number"  name="attr_Climb" value="40"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Climb}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Climb}}} {{roll=[[1d100]]}} {{skillname=Climb}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Climb" />Dodge
+				<span class="sheet-base-chance">(DEX x2%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Dodge"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Dodge}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Dodge}}} {{roll=[[1d100]]}} {{skillname=Dodge}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Drive
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_DriveSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_DriveSucess"   />
+					<input type="text" name="attr_DriveSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_DriveScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{DriveScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{DriveScore}}} {{roll=[[1d100]]}} {{skillname=@{DriveSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Fly" />Fly
+				<span class="sheet-base-chance">(__%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Fly"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Fly}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Fly}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Fly}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Fly}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Fly}}} {{roll=[[1d100]]}} {{skillname=Fly}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Hide" />Hide
+				<span class="sheet-base-chance">(10%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Hide"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Hide}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Hide}}} {{roll=[[1d100]]}} {{skillname=Hide}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Jump" />Jump
+				<span class="sheet-base-chance">(25%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Jump"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Jump}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Jump}}} {{roll=[[1d100]]}} {{skillname=Jump}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Pilot
+				<span class="sheet-base-chance">(1%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_PilotSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_PilotSucess"/>
+					<input type="text" name="attr_PilotSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_PilotScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{PilotScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{PilotScore}}} {{roll=[[1d100]]}} {{skillname=@{PilotSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Projection"/>Projection
+				<span class="sheet-base-chance">(DEX x2%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Projection"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Projection}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Projection}}} {{roll=[[1d100]]}} {{skillname=Projection}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Ride
+				<span class="sheet-base-chance">(5%)</span>
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_RideSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_RideSucess"/>
+					<input type="text" name="attr_RideSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_RideScore" value="5"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{RideScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{RideScore}}} {{roll=[[1d100]]}} {{skillname=@{RideSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Stealth"/>Stealth
+				<span class="sheet-base-chance">(10%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Stealth" value="10"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Stealth}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Stealth}}} {{roll=[[1d100]]}} {{skillname=Stealth}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Swim"/>Swim
+				<span class="sheet-base-chance">(25%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_Swim" value="25"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{Swim}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{Swim}}} {{roll=[[1d100]]}} {{skillname=Swim}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-Throw"/>Throw
+				<span class="sheet-base-chance">(25%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_throw" value="25"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{throw}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{throw}}} {{roll=[[1d100]]}} {{skillname=Throw}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_PhysicalSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_PhysicalSucess" />
+					<input type="text" name="attr_PhysicalSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_PhysicalScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{PhysicalScore}+@{Physical})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{PhysicalScore}}} {{roll=[[1d100]]}} {{skillname=@{PhysicalSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
 		<!-- Combat -->
-		<table style="width: 100%;">					
-			<tr>
-				<td style="width:20px"></td>
-				<td><b class="sheet-cat_header">Combat</b></td>
-				<td><input type="number" name="attr_Combat" value="0"/></td>
-			</tr>				
-			<tr>
-				<td style="width: 20px;"></td>
-				<td><strong>Combat</strong></td>
-			</tr>
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Melee</td>
-			</tr>
-		</table>
-		<fieldset class='repeating_meleeSkills'>
-			<input type="checkbox" name="attr_meleeSucess"  />
-			<input type="text" name="attr_meleeSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_meleeScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{meleeScore}}} {{roll=[[1d100]]}} {{skillname=@{meleeSkill}}}"/></td>
-		</fieldset>				
-		<table style="width: 100%;">					
-			<tr>
-				<td class="sheet-chkfiller"></td>
-				<td>Ranged</td>
-			</tr>
-		</table>			
-		<fieldset class='repeating_rangedSkills'>
-			<input type="checkbox" name="attr_rangedSucess"  />
-			<input type="text" name="attr_rangedSkill" class="sheet-skillname"/>
-			<input type="number" name="attr_rangedScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{rangedScore}}} {{roll=[[1d100]]}} {{skillname=@{rangedSkill}}}"
-			/></td>
-		</fieldset>
-		<table style="width: 100%;">					
-			<tr>
-				<td class="sheet-chkfiller"></td> 
-				<td>Artillery</td>
-			</tr>
-		</table>	
-		<fieldset class='repeating_artillerySkills'>
-			<input type="checkbox" name="attr_ArtillerySucess"  />
-			<input type="text" name="attr_ArtillerySkill" class="sheet-skillname"/>
-			<input type="number" name="attr_ArtilleryScore" />
-			<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ArtilleryScore}}} {{roll=[[1d100]]}} {{skillname=@{ArtillerySkill}}}"/></td>
-		</fieldset>					
-		<table style="width: 100%;">	
-			<tr>
-				<td><input type="checkbox" name="attr_Success-MartialArts"  /></td>
-				<td class="sheet-skillname">Martial Arts (1%)</td>
-				<td><input type="number" name="attr_MartialArts"  /></td>
-				<td><button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{MartialArts}}} {{roll=[[1d100]]}} {{skillname=Martial Arts}}"/></td>
-			</tr>					
-		</table>				
-		<br />					
-		<table style="width: 100%;">			
-		</table>
+		<div class="sheet-skill-item sheet-margin-top ">
+			<h3 class="sheet-category-heading sheet-ovf-category">Combat</h3>
+			<div class="sheet-category-bonus">
+				<span class="sheet-bonus-label">bonus</span>
+				(<input type="number" name="attr_Combat" value="0" />)
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label">
+				<input type="checkbox" name="attr_Success-MartialArts"/>Martial Arts
+				<span class="sheet-base-chance">(1%)</span>
+			</label>
+			<div class="sheet-rating-roll">
+				<input type="number" name="attr_MartialArts" value="1"/>
+				<span>%</span>
+				<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{MartialArts}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{MartialArts}}} {{roll=[[1d100]]}} {{skillname=Martial Arts}}"/>
+			</div>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Melee
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_meleeSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_meleeSucess"/>
+					<input type="text" name="attr_meleeSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_meleeScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{meleeScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{meleeScore}}} {{roll=[[1d100]]}} {{skillname=@{meleeSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Ranged
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_rangedSkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_rangedSucess"/>
+					<input type="text" name="attr_rangedSkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_rangedScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{rangedScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{rangedScore}}} {{roll=[[1d100]]}} {{skillname=@{rangedSkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="sheet-skill-item">
+			<label class="sheet-ovf-label sheet-ovf-label-indent">
+				Artillery
+			</label>
+		</div>
+		<div class="sheet-skill-item">
+			<fieldset class="repeating_artillerySkills">
+				<span class="sheet-repeat-label">
+					<input type="checkbox" name="attr_ArtillerySucess"/>
+					<input type="text" name="attr_ArtillerySkill"/>
+				</span>
+				<div class="sheet-rating-roll">
+					<input type="number" name="attr_ArtilleryScore"/>
+					<span>%</span>
+					<button type="roll" value="&{template:skillRoll} {{success=[[ceil((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})]]}} {{fumble=[[ceil((95+((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20))]]}} {{crit=[[ceil(((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/20)+1]]}} {{special=[[ceil(((@{ArtilleryScore}+@{Combat})*?{Multipler|1}+?{Mods|0})/5)+1]]}} {{skillvalue=@{ArtilleryScore}}} {{roll=[[1d100]]}} {{skillname=@{ArtillerySkill}}}"/>
+				</div>
+			</fieldset>
+		</div>
 	</div>
-</div>
-
 </div>
 <!--End of Skills by category-->
 <hr />
@@ -1795,6 +1960,10 @@
 	</p>
 	<hr/>
 </div>
+<p>
+	<h3 style="text-align: center; color: #FFF; background-color: #000;">Adventuring Gear &amp; Other Possesions</h3>
+	<textarea name="attr_Gear-Possessions"></textarea> 
+</p>
 <h3 style="text-align: center; color: #FFF; background-color: #000;">Personal Data</h3>
 <div class='sheet-2colrow'>
 	<div class='sheet-col'>
@@ -1825,10 +1994,6 @@
 	</table>
 	Personal Property <textarea name="attr_Personal-Property"></textarea><br>
 	Real Estate <textarea name="attr_Real-Estate"></textarea>
-</p>
-<p>
-	<h3 style="text-align: center; color: #FFF; background-color: #000;">Adventuring Gear &amp; Other Possesions</h3>
-	<textarea name="attr_Gear-Possessions"></textarea> 
 </p>	
 
 
