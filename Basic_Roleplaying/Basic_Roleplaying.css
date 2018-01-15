@@ -3,8 +3,7 @@
 	margin-left: 3px;
 	margin-right: 3px;
 	font-weight: bold;
-	margin-bottom: 0px;
-	
+	margin-bottom: 0px;	
 }	
 .sheet-skills-header{
 	margin-bottom: 8px;
@@ -18,8 +17,6 @@
 }
 
 /*Hide stuff*/
-
-
 .charsheet div.sheet-skills-magic1{
     display: none;    
 }
@@ -27,8 +24,6 @@
 .charsheet input.sheet-toggle-magic1:checked ~ div.sheet-skills-magic1 {
     display: inline;
 }
-
-
 
 .charsheet div.sheet-strike-rank{
     display: none;    
@@ -38,8 +33,6 @@
     display: inline;
 }
 
-
-
 .charsheet span.sheet-strike-rank{
     display: inline;    
 }
@@ -48,57 +41,22 @@
     display: none;
 }
 
-
-/*
-input.sheet-showstrike-rank:checked ~ .repcontainer[data-groupname="repeating_Hand-to-Hand"] sheet-strike-rank  {
-    display: inline;
-}
-
-div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
-{
-    display: inline-block;
-	border: 5px solid green;
-}
-*/
-
-
 .sheet-melee-toggle { display: none; }
 .sheet-check-melee-toggle:checked ~ [data-groupname=repeating_melee] > .repitem .sheet-melee-toggle { display: inline; }
-
 
 .sheet-example-toggle { display: none; }
 .sheet-check-toggle:checked ~ [data-groupname=repeating_example] > .repitem .sheet-example-toggle { display: inline; }
 
-
 .sheet-repeat-strike-rank{ display: none; border: 5px soild pink; }
 .sheet-showstrike-rank:checked ~ [data-groupname=repeating_Hand-to-Hand] > .repitem .sheet-repeat-strike-rank { display: inline; }
-
-
-/*	
-	input.sheet-collapse-example::checked ~ .repcontainer[data-groupname=repeating_example] .repeating-content {
-    display: none;
-}
-*/
-
-/*
-.charsheet div.sheet-skills-alphabetical{
-    display: inline;    
-}
-
-.charsheet input.sheet-toggle-alphabetical:not(:checked) ~ div.sheet-skills-alphabetical {
-    display: none;
-*/
 
 .charsheet div.sheet-skills-alphabetical{
     display: none;    
 }
 
-
 .charsheet input.sheet-toggle-alphabetical:checked ~ div.sheet-skills-alphabetical {
     display: inline;
 }
-
-
 
 .charsheet div.sheet-skills-by-category{
     display: none;    
@@ -124,7 +82,6 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
     display: block;
 }
 
-
 .charsheet div.sheet-hitloc{
     display: none;    
 }
@@ -132,7 +89,6 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
 .charsheet input.sheet-showhitloc:checked ~ div.sheet-hitloc {
     display: inline;
 }
-
 
 .charsheet div.sheet-edufld{
     display: none;    
@@ -152,7 +108,6 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
 
 /* Configuration Window*/
 .charsheet .sheet-cdiv {
-    /*border: 1px dotted;*/
     padding-right: 15px;
     padding-left: 15px;
 }
@@ -175,8 +130,6 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
     width: 5%;
     height: 16px;
     font-size: 9px;
-    /*font-family: "Pictos";*/
-    /*background: #65763c;*/
     background: black; /*#93537c;*/
 	color: white; /*white;*/
 	font-weight: bold;
@@ -190,8 +143,6 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
     cursor: pointer;	
     margin-left: auto;
     margin-top: auto;
-	/*position: absolute;
-	right: 20%;*/
 	opacity: 0;
 	z-index: 9999;
 }
@@ -208,7 +159,6 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
     font-size: .9em; 
     font-weight: normal
 }
-
 /*End Configuration Window*/
 
 .sheet-section-header{
@@ -221,50 +171,41 @@ div[data-groupname="repeating_Hand-to-Hand"] .sheet-strike-rank
 	margin-bottom: 10px;
 }
 
-
-.repcontrol{
-	margin-right: 7px;
+.repcontrol {
+	margin:0 0.9rem 0 1.25rem;
 }
 
-div.repcontrol button
-{
+div.repcontrol button {
     width: 20px;
     height: 20px;
     color: transparent;
 	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-	 
 }
 
 div.repcontrol button.repcontrol_add::before,
-div.repcontrol button.repcontrol_edit::before
-{
+div.repcontrol button.repcontrol_edit::before {
     font-family: Pictos;
     position: relative;
     color: #000;
 }
 
 /* +Add */
-div.repcontrol button.repcontrol_add::before
-{
-	
+div.repcontrol button.repcontrol_add::before {	
     content: "&"; /* & in Pictos is a + sign, while + is a plus inside a circle */    
     left: -5px;
     top: -4px;
 }
 
 /* Modify */
-div.repcontrol button.repcontrol_edit::before
-{
+div.repcontrol button.repcontrol_edit::before {
 	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     content: "x"; /* x in Pictos is a crossed hammer and wrench */
     left: -5px;
     top: -4px;
 }
 /* Done */
-div.repcontrol.editmode button.repcontrol_edit::before
-{
+div.repcontrol.editmode button.repcontrol_edit::before {
     content: "3"; /* 3 in Pictos is a check mark */
-	 
 }
 
 .sheet-big-col{
@@ -274,62 +215,51 @@ div.repcontrol.editmode button.repcontrol_edit::before
 	width: calc(40% - 20px) !important;
 }
 
-
-.sheet-characteristics 
-{
+.sheet-characteristics {
 	border: 3px solid black;
 	width: 100%
 }
 
-.sheet-characteristics p
-{
+.sheet-characteristics p {
 	margin-left: 3px;
 	margin-right: 7px;
 	font-weight: bold;
 	margin-bottom: 0px;
 }
 
-button[type="roll"].sheet-plain
-{
+button[type="roll"].sheet-plain {
 	width:100%;
 }
-button[type="roll"].sheet-plain-major-wound
-{
-background:    #000;
-background:    -webkit-linear-gradient(#000, #000);
-background:    linear-gradient(#000, #000);
-border-radius: 5px;
-color:         #fff;
-display:       inline-block;
-text-align:    center;
-text-shadow:   1px 1px 0 #000;
-font-size: 1.0em;
-	
+
+button[type="roll"].sheet-plain-major-wound {
+	background:    #000;
+	background:    -webkit-linear-gradient(#000, #000);
+	background:    linear-gradient(#000, #000);
+	border-radius: 5px;
+	color:         #fff;
+	display:       inline-block;
+	text-align:    center;
+	text-shadow:   1px 1px 0 #000;
+	font-size: 1.0em;	
 }
 
-button[type="roll"].sheet-plain-major-wound::before
-{
+button[type="roll"].sheet-plain-major-wound::before {
     content: "";
 	width: 117px;
 	color: #fff ; 
 	background-color: #000
-	
 }
 
 /* Increase specificity for now. Should have roll icon affordance instead of suppressing. */
-.ui-dialog .charsheet button[type="roll"].sheet-plain::before
-{
+.ui-dialog .charsheet button[type="roll"].sheet-plain::before {
     content: "";
-
 }
-
 
 .sheet-hit-location-selection {
 	color: #ffffff;
     background-color: #000000;
 	width:100%
 }
-
 
 .sheet-hit-location-selection td{
 	padding-left: 20px;
@@ -346,14 +276,12 @@ button[type="roll"].sheet-plain-major-wound::before
 	
 }
 
-
-.sheet-header-text{
+.sheet-header-text {
 	font-size: 10px;
 }
-.sheet-armor-name{
+.sheet-armor-name {
 	width:100px;
 }
-
 
 .sheet-template_value{
 	text-align: right;
@@ -438,8 +366,6 @@ button[type="roll"].sheet-plain-major-wound::before
     box-shadow: none;
     padding: 0px;
     margin: 0px;
-    /*margin-top: -5px;*/
-    /*width: 70%;*/
 }
 
 .charsheet span.sheet-diceroll {
@@ -457,4 +383,157 @@ button[type="roll"].sheet-plain-major-wound::before
 	border-left: none;
 	border-bottom: dotted 1px black;
     color: black;
+}
+
+.sheet-brp {
+	max-width:960px;
+	min-width:640px;
+}
+
+.sheet-brp .sheet-skill-item input[type="number"],
+.sheet-brp .sheet-skill-item input[type="text"] {
+	background-color:transparent;
+    border:none;
+    border-bottom:1px solid darkgrey;
+    border-radius:0;
+    box-shadow:none;
+    line-height:1rem;
+	padding:0.1rem 0;
+	-moz-appearance:textfield;
+}
+
+.sheet-category-heading {
+    font-size:16px;
+    font-weight:bold;
+}
+
+.sheet-skills-layout{
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: "skcol1 skcol2 skcol3";
+	margin:0.5rem;
+}
+.sheet-skills-col1 {
+    grid-area:skcol1;
+}
+
+.sheet-skills-col1 .repcontainer,
+.sheet-skills-col1 .repitem {
+	margin: 0 0 0.2rem 0;
+}
+
+.sheet-skills-col2 {
+    grid-area:skcol2;
+}
+
+.sheet-skills-col2 .repcontainer,
+.sheet-skills-col2 .repitem {
+	margin: 0 0 0.2rem 0;
+}
+
+.sheet-skills-col3 {
+    grid-area:skcol3;
+}
+.sheet-skills-col3 .repcontainer,
+.sheet-skills-col3 .repitem {
+	margin: 0 0 0.2rem 0;
+}
+
+.sheet-sub-col {
+    width:100%;
+}
+
+/* Skills layout */
+.sheet-skill-item {
+    margin:0 0 0.2rem 0;
+    width:100%;
+}
+
+.sheet-margin-top {
+	margin:1rem 0 0 0;
+}
+
+.sheet-ovf-category {
+    display:inline-block;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    text-overflow:ellipsis;
+    vertical-align:middle;
+    white-space:nowrap;
+    width:calc(100% - 5rem);
+}
+
+.sheet-category-bonus {
+    display:inline;
+    color:#333;
+}
+
+.sheet-bonus-label {
+    font-size:10px;
+    font-style: italic;
+}
+
+.charsheet .sheet-category-bonus input[type="number"],
+.charsheet .sheet-rating-roll input[type="number"] {
+    text-align:right;
+	width:1.5rem;
+}
+
+.charsheet .sheet-category-bonus input[type="number"] {
+    border-bottom:2px solid #333;
+}
+
+.sheet-rating-roll {
+    display:inline-block;
+    width:4.5rem;
+}
+.sheet-rating-roll > span {
+    display:inline-block;
+    font-size:11px;
+    margin: 0 0 0 -0.25rem;
+}
+
+.charsheet .sheet-rating-roll button[type="roll"] {
+    height:1.6rem;
+}
+
+label.sheet-ovf-label {
+    display:inline-block;
+    font-size:15px;
+    font-weight:normal;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    text-overflow:ellipsis;
+    vertical-align:middle;
+    white-space:nowrap;
+	width:calc(100% - 5rem);
+}
+
+label.sheet-ovf-label-indent {
+	display:inline-block;
+	margin-left:1.25rem;
+	width:calc(100% - 2rem);
+}
+
+.sheet-repeat-label {
+	display:inline-block;
+	padding:0;
+	width:calc(100% - 5rem);
+}
+
+.sheet-repeat-label input[type="text"] {
+	border-bottom-style: dashed;
+	font-size:15px;
+	width:calc(100% - 1.75rem);
+}
+
+.sheet-base-chance {
+    font-size:13px;
+}
+
+.sheet-repeat-label input[type="checkbox"],
+.sheet-ovf-label input[type="checkbox"] {
+    margin:-0.2rem 0.2rem 0 0.25rem;
 }
