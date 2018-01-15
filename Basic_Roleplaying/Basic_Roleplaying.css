@@ -107,34 +107,59 @@
 }
 
 /* Configuration Window*/
-.charsheet .sheet-cdiv {
+.sheet-brp .sheet-cdiv {
     padding-right: 15px;
-    padding-left: 15px;
+	padding-left: 15px;
+	text-align: right;
+}
+
+.sheet-brp .sheet-config {
+	padding:0.5rem 1rem 1rem 2rem;
+	text-align:left;
+	border-style: dotted; 
+	border-color: gray;
+	background-color: white;
 }
 
 .sheet-HideConfig:checked ~ *.sheet-config {
 	display:none;
 }
 
+.sheet-is-config-icon {
+	font-family:"pictos";
+	font-size:18px;
+	font-weight:normal;
+}
+
 .charsheet span.sheet-is-config::after { /*Close Config: grayish background with black text*/
 	content: "^";
+	display:inline-block;
+	position:relative;
+	top:0.25rem;
 }
 
 .charsheet .sheet-HideConfig:checked + span.sheet-is-config::after { /*Show Configuration: Black background with grayish text*/
-	content: "v";
+	content: "^";
+	display:inline-block;
+	transform:rotate(180deg);
+	position:relative;
+	top:-0.1rem;
 }
 
 .charsheet span.sheet-is-config {
     text-align: center;
     display: inline-block;    
-    width: 5%;
+    width: 32px;
     height: 16px;
-    font-size: 9px;
-    background: black; /*#93537c;*/
-	color: white; /*white;*/
-	font-weight: bold;
+    background: black;
+	color: white;
+	font-family:sans-serif;
+	font-size:16px;
+	font-weight:bold;
 	border-radius: 4px;
 	margin-left: -5%;
+	padding:0.25rem 0.5rem 0.4rem 0.75rem;
+	text-align:left;
 }
 
 .charsheet input.sheet-HideConfig {
@@ -172,7 +197,7 @@
 }
 
 .repcontrol {
-	margin:0 0.9rem 0 1.25rem;
+	margin:0 0.85rem 0 1.25rem;
 }
 
 div.repcontrol button {
@@ -228,6 +253,8 @@ div.repcontrol.editmode button.repcontrol_edit::before {
 }
 
 button[type="roll"].sheet-plain {
+	padding-left:0.4rem;
+	text-align:left;
 	width:100%;
 }
 
@@ -388,6 +415,31 @@ button[type="roll"].sheet-plain-major-wound::before {
 .sheet-brp {
 	max-width:960px;
 	min-width:640px;
+}
+
+.sheet-brp-logo {
+	background-color:white;
+	margin:1rem 0 0 -2rem;
+	padding:0 2rem 0 0;
+	text-align:left;
+	width:calc(100% + 2rem)
+}
+
+/* When config menu closed move BRP logo up to save space */
+.sheet-HideConfig:checked ~ .sheet-brp-logo {
+	margin-top:-2.5rem;
+}
+
+.sheet-basic-stats {
+	padding:1rem 0 0 0;
+}
+
+.sheet-margin-bottom {
+	margin-bottom:1rem;
+}
+
+.sheet-margin-bottom-large {
+	margin-bottom:2rem;
 }
 
 .sheet-brp .sheet-skill-item input[type="number"],
